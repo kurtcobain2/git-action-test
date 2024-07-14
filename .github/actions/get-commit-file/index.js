@@ -12,7 +12,7 @@ async function run() {
             repo: github.context.repo.repo,
             ref: github.context.sha
         }).then((res) => {
-            core.setOutput('files', res.data.files.map((v) => v.filename).join(','));
+            core.setOutput('files', res.data.files);
         }).catch((err) => {
             core.setFailed(err);
         })
