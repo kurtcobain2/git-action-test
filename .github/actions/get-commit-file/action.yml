@@ -1,0 +1,16 @@
+name: 'Get Commit File'
+
+description: 'Get Commit File'
+
+inputs:
+  github-token:
+    description: 'Github token'
+    required: true
+
+outputs:
+  url:
+    description: 'The url of commit file'
+
+runs:
+  using: 'node16'
+  main: 'index.js'
