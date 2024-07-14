@@ -39,7 +39,11 @@ jobs:
           npm ci
 
       - name: Do Action
+        id: do-action
         uses: ./.github/actions/get-commit-file
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Print output
+        run: |
+          echo "Output: ${{ steps.do-action.outputs.url }}"
