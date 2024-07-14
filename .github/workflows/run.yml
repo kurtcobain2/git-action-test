@@ -46,4 +46,4 @@ jobs:
 
       - name: Print output
         run: |
-          echo "Output: ${{ steps.do-action.outputs.url }}"
+          echo "Output: ${{ steps.do-action.outputs.files }}"

@@ -7,12 +7,12 @@ async function run() {
         const TOKEN = core.getInput('github-token');
         const octokit = github.getOctokit(TOKEN);
 
-        octokit.rest.git.getCommit({
+        octokit.rest.repos.getCommit({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
-            commit_sha: github.context.sha
+            ref: github.context.sha
         }).then((res) => {
-            core.setOutput('url', res.data.url);
+            core.setOutput('files', res.data.files.map((v) => v.filename).join(','));
         }).catch((err) => {
             core.setFailed(err);
         })

@@ -8,8 +8,8 @@ inputs:
     required: true
 
 outputs:
-  url:
-    description: 'The url of commit file'
+  files:
+    description: 'The name of commit files'
 
 runs:
   using: 'node16'
